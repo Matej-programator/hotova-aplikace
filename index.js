@@ -9,7 +9,7 @@ const uzivatelems = require('./uzivatelems.js').server;
 // promeni
 
 let serverms = http.createServer(server);
-let port = 8080;
+let port = 7070;
 
 
 let html = fs.readFileSync("./index.html");
