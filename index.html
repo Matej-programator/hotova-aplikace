@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uložište hesel</title>
+    <script src="./script.js"></script>
+    
+    
+    
+</head>
+
+<body onload="poNacteni()">
+
+    <div id="oblast_registrace">
+        <h1>Úložiště hesel</h1>
+
+        <h2> registrace</h2>
+        <input type="text" placeholder="jmeno" id="jmu">
+        <br>
+        <input type="text" placeholder="přimení" id="pru">
+        <br>
+        <input type="text" placeholder="heslo" id="huz">
+        <br>
+        <input type="password" placeholder="heslo znovu" id="hzn">
+        <br>
+        <button onclick="registovat()">registrovatse</button>
+    </div>
+
+    <div id="oblast_prihlaseni">
+        <h1>Uložiště hesel</h1>
+        
+        <h2>přihlášení</h2>
+        <input type="text" placeholder="jméno" id="jp">
+        <br>
+        <input type="password" placeholder="heslo" id="jh">
+        <br>
+        <button onclick="prihlasitSe()">přihlásit se</button>
+        <input type="button" onclick="ukazRegistraci()" value="Registrace...">
+        <br>
+    </div>
+
+    <div id="oblast_komunikace">
+        <h1>Uložiště hesel</h1>
+        <input type="hidden" id="idhesla">
+        <input type="text" placeholder="název uživatele" id="nu">
+        <br>
+        <input type="text" placeholder="název aplikace" id="naapt">
+        <br>
+        <input type="text" placeholder="heslo do aplikace" id="heslo">
+        <br>
+        <br>
+        <button onclick="uloztHesla()">přidat heslo</button>
+        <br>
+        <br>
+        <button onclick="ukazGeneratorHesel()">generátor hesel</button>
+    </div>
+    <br>
+
+    <div id="ghe">
+        <h1>Generator hesel</h1>
+        <div>
+            <div>
+                <label>Mala<input type="checkbox" checked id="checkbox-mala"></label>
+            </div>
+            <div>
+                <label>Velka<input type="checkbox" id="checkbox-velka"></label>
+            </div>
+            <div>
+                <label>Cisla<input type="checkbox" checked id="checkbox-cisla"></label>
+            </div>
+            <div>
+                <label>Specialni Znaky<input type="checkbox" id="checkbox-specialni-znaky"></label>
+            </div>
+            <div>
+                <label>Delka hesla<input type='number' min="1" value="8" id="delka-hesla"></label>
+            </div>
+            <div>
+                <button id="generator" onclick="generuj()">Generuj
+                    heslo</button>
+                    <button onclick="ukazKomunikaci()">zpět</button>
+            </div>
+        </div>
+        <div id="vygenerovane-heslo"></div>
+    </div>
+    <br>
+   
+    <div id="hesla">
+        <h2>heslo</h2>
+        <B id="h" style="font-family: Arial, Helvetica, sans-serif;">...</B>
+    </div>
+    
+</body>
+
+</html>
