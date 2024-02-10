@@ -244,7 +244,3 @@ function upravytJMENO(id,jmeno){
   document.getElementById("idhesla").value = id;
   document.getElementById("nu").value = jmeno;
 }
-function ulozgeneraci(idh,kontejner){
-  document.getElementById("heslo").value = idh
-  document.getElementById("idhesla").value = kontejner;
-}
