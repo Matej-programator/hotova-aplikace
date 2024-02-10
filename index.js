@@ -6,11 +6,13 @@ const fs = require("fs");
 // tvorda soboru.json
 const ulozHeslo = require("./hesla.js").server;
 const uzivatelems = require('./uzivatelems.js').server;
-// promeni
+
+// promenim
 
 let serverms = http.createServer(server);
-let port = 8080;
+let port = 7070;
 
+// soubory na servu
 
 let html = fs.readFileSync("./index.html");
 let js = fs.readFileSync("./script.js");
@@ -51,6 +53,7 @@ if(vstup.url.startsWith("/uzvatelems/registrovat")){
    console.log("registrovat");
    uzivatelems(vstup,parametry,vistup);
 }
+
 
 
   } else {                                                     

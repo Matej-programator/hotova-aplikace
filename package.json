@@ -6,6 +6,8 @@
   "dependencies": {
     "cripto": "^1.1.4",
     "crypto": "^1.0.1",
+    "cryptr": "^6.3.0",
+    "generate-unique-id": "^2.0.3",
     "mongodb": "^2.2.12",
     "node": "^20.7.0",
     "node-bin-setup": "^1.1.3",

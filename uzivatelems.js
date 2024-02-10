@@ -39,7 +39,7 @@ exports.server = function (vstup,parametry,vistup) {
 
   if (vstup.url.startsWith("/uzvatelems/registrovat")) {
     //zpracovani parametru
-
+  
      for (let u of msU) {
       if (u.prihlasovacijmeno == parametry.jmenom) {
         let o = {};

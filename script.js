@@ -20,6 +20,10 @@ async function uloztHesla(){
     nebezpeci.id = id;
     nebezpeci.token = token;
    
+    if(nazev,heslo,jmeno == ""){
+      alert("neuložíne vaše úbaje do databáze protože jste nic ne zadaly");
+      return;
+    }
 
     // posilani na server ve formatu url
     let url = location.href + "heslam/ulozt";
@@ -28,9 +32,15 @@ async function uloztHesla(){
     let data = await re.json();
     console.log(data);
     alert("heslo je uložno v databazi");
+    smazaniOBSEHU(nazev,heslo,jmeno);
     nacti
 }
 
+function smazaniOBSEHU(nazev,heslo,jmeno){
+    nazev = document.getElementById("naapt").value = "";
+    heslo = document.getElementById("heslo").value = "";
+    jmeno = document.getElementById("nu").value = "";
+}
 
 let token;
 let plnejmeno = '';
@@ -125,21 +135,7 @@ async function registovat() {
   alert("právě jste se zaregistovali");
   ukazPrihlaseni();
 }
-
-async function vygenerovaneHeslo(){
-    let vh = document.getElementById("vygenerovane-heslo");
-    console.log(vh);
-
-    nebezpeci = {};
-    nebezpeci.generovat = vh;
-
-  // posilani na server ve formatu url
-  let url = location.href + "hesla/generuj";
-  console.log(url);
-  let re = await fetch(url, { method: "POST", body: JSON.stringify(nebezpeci) });
-  let data = await re.json();
-  console.log(data);
-}
+ 
 
 // Generaror hesel
 
@@ -151,7 +147,8 @@ function generuj() {
     return;
   }
   const heslo = generujHeslo(delka);
-  kontejner.textContent = heslo;
+  kontejner.value = heslo;
+  
 }
 
 
@@ -246,4 +243,8 @@ function upravytHESLO(id,heslo){
 function upravytJMENO(id,jmeno){
   document.getElementById("idhesla").value = id;
   document.getElementById("nu").value = jmeno;
+}
+function ulozgeneraci(idh,kontejner){
+  document.getElementById("heslo").value = idh
+  document.getElementById("idhesla").value = kontejner;
 }
